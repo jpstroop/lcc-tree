@@ -21,7 +21,7 @@ body{
   font-family: sans-serif;
   font-weight: bold;
   font-size: 1.25em;
-  
+
 
 }
 *[data-tooltip="true"] rect{
@@ -30,12 +30,20 @@ body{
   opacity: .85;
   rx: 30;
   ry: 2;
-  
+
 }
 
-.obser-div{
-  width: 950px;
-   margin:auto;
+h1 {
+  font-size: large;
+}
+
+header {
+  font-size: smaller;
+}
+
+.credit {
+
+  font-style: italic;
 }
 
 @media only screen and (max-width: 768px) {
@@ -47,54 +55,25 @@ body{
 }
 
 
-</style>  
+</style>
 
 
-<div  class="obser-div">
-  
-  <p>Below are three treemaps built from the MARC records of the Library of Congress, Harvard and Columbia. The treemap is a hierarchy of the Library of Congress Classification (LCC) number found for each MARC record. While LCC can be very specific this visualization groups large ranges together up to four levels deep. Similar idea to a <a href="https://medium.com/@thisismattmiller/library-of-congress-holdings-by-lcc-51fb5eb868f2">previous visualization</a>  but the treemap is easier to visually gauge a range’s area or size. <a href="http://thisismattmiller.com">-thisismattmiller.com</a></p>
 
+<h1>Treemaps built from the MARC records of PUL</h1>
+<header>
+  <p>As of <a href="https://bibdata.princeton.edu/dumps/21750.json">2020-08-13</a></p>
+  <p class="credit">Forked from <a href="https://observablehq.com/@thisismattmiller/harvard-lcc-treemap/2">Matt Miller / Harvard - LCC Treemap</a></p>
   <p>Click to zoom, click "root" to zoom back out.</p>
+</header>
 
-</div>
-
-<h2 class="obser-div">Library of Congress (2016)</h2>
-
-<div id="observablehq-86873b28" class="obser-div"></div>
+<div id="observablehq-890ad97f"></div>
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@thisismattmiller/untitled/2.js?v=3";
-const inspect = Inspector.into("#observablehq-86873b28");
+import define from "https://api.observablehq.com/@jpstroop/princeton-lcc-treemap.js?v=3";
+const inspect = Inspector.into("#observablehq-890ad97f");
 (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
 </script>
 
-<h2 class="obser-div">Harvard (2017)</h2>
-
-<div id="observablehq-384b8d50" class="obser-div"></div>
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@thisismattmiller/harvard-lcc-treemap/2.js?v=3";
-const inspect = Inspector.into("#observablehq-384b8d50");
-(new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
-</script>
-
-
-<h2 class="obser-div">Columbia (2020)</h2>
-
-
-<div id="observablehq-75b82c49" class="obser-div"></div>
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@thisismattmiller/columbia-lcc-treemap.js?v=3";
-const inspect = Inspector.into("#observablehq-75b82c49");
-(new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
-</script>
-
-
-<div  class="obser-div">
-  
-  <p>If you have an institutions MARC files you can make your own: <a href="https://github.com/thisismattmiller/lcc-tree">https://github.com/thisismattmiller/lcc-tree</p>
-</div>
 
 
 </body>
